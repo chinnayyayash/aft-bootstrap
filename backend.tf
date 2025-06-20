@@ -39,13 +39,13 @@ resource "aws_dynamodb_table" "terraform_state_locks" {
   }
 }
 
-# # Configure Terraform to use the S3 bucket and DynamoDB table for state management
-# terraform {
-#   backend "s3" {
-#     bucket         = "983491056145-aftbootstrap-tfstate"
-#     key            = "aft-bootstrap/state_file/terraform.tfstate"
-#     region         = "ca-central-1"
-#     encrypt        = true
-#     dynamodb_table = "ddb-aftbootstrap-state"
-#   }
-# }
+# Configure Terraform to use the S3 bucket and DynamoDB table for state management
+terraform {
+  backend "s3" {
+    bucket         = "983491056145-aftbootstrap-tfstate"
+    key            = "aft-bootstrap/state_file/terraform.tfstate"
+    region         = "ca-central-1"
+    encrypt        = true
+    dynamodb_table = "ddb-aftbootstrap-state"
+  }
+}
